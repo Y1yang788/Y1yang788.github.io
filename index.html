@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-LFSR" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/01/05/LFSR/" class="article-date">
+  <time class="dt-published" datetime="2025-01-05T10:23:48.000Z" itemprop="datePublished">2025-01-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/01/05/LFSR/">LFSR</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="LFSR"><a href="#LFSR" class="headerlink" title="LFSR"></a>LFSR</h1><h4 id="概念了解"><a href="#概念了解" class="headerlink" title="概念了解"></a>概念了解</h4><p>LFSR是指线性反馈移位寄存器，给定一定的输出，将该输出的线性代数再用作输入的移位寄存器，异或运算是最常见的单比特线性代数：<br>对寄存器的某些位进行异或操作后作为输入,再对寄存器中的各比特进行整体移位.该结构具有结构简单,运行速度快的特点,常被应用于伪随机数和伪随机噪声的生成中.同时,该原件常与流密码相关部分联合使用.</p>
+<h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p>LFSR是FSR的一种，还有一种是NFSR(非线性)<br><img src="https://pic.imgdb.cn/item/676ceddfd0e0a243d4ea7fa7.png" alt="alt text"><br>函数可表示为:<img src="https://pic.imgdb.cn/item/676cee04d0e0a243d4ea7faa.png"></p>
+<hr>
+<p>这里给不了解布尔运算的做一个基础补充：<br>布尔运算分为与运算，或运算，异或运算和非运算</p>
+<h4 id="与运算："><a href="#与运算：" class="headerlink" title="与运算："></a>与运算：</h4><p><img src="https://pic.imgdb.cn/item/676cee17d0e0a243d4ea7fab.png"></p>
+<h4 id="或运算"><a href="#或运算" class="headerlink" title="或运算"></a>或运算</h4><p><img src="https://pic.imgdb.cn/item/676cee22d0e0a243d4ea7fb1.png"></p>
+<h4 id="异或运算"><a href="#异或运算" class="headerlink" title="异或运算"></a>异或运算</h4><p><img src="https://pic.imgdb.cn/item/676cee2bd0e0a243d4ea7fb7.png"></p>
+<h4 id="非运算"><a href="#非运算" class="headerlink" title="非运算"></a>非运算</h4><p><img src="https://pic.imgdb.cn/item/676cee35d0e0a243d4ea7fba.png"></p>
+<hr>
+<ul>
+<li>an+1&#x3D;c1an⊕c2an-1⊕…⊕cna1</li>
+<li>an+2&#x3D;c1an+1⊕c2an⊕…⊕cna2</li>
+<li>…</li>
+<li>an+i&#x3D;c1an+i-1⊕c2an+i-2⊕…⊕cnai(i&#x3D;1,2,3…)</li>
+</ul>
+<p>例如:<br><img src="https://pic.imgdb.cn/item/676cee4bd0e0a243d4ea7fbc.png"><br>题型:1.已知反馈函数，输出序列，求逆推出初始状态</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">from flag import flag</span><br><span class="line">assert flag.startswith(&quot;flag&#123;&quot;)</span><br><span class="line">assert flag.endswith(&quot;&#125;&quot;)</span><br><span class="line"># 作用：判断字符串是否以指定字符 开头或结尾</span><br><span class="line">assert len(flag)==25</span><br><span class="line"></span><br><span class="line">def lfsr(R,mask):</span><br><span class="line">    output = (R &lt;&lt; 1) &amp; 0xffffff #将R向左移动1位，bin(0xffffff)=&#x27;0b111111111111111111111111&#x27;</span><br><span class="line">    i=(R&amp;mask)&amp;0xffffff          #按位与运算符&amp;：参与运算的两个值,如果两个相应位都为1,则该位的结果为1,否则为0</span><br><span class="line">    lastbit=0</span><br><span class="line">    while i!=0:</span><br><span class="line">        lastbit^=(i&amp;1)           #按位异或运算，得到输出序列</span><br><span class="line">        i=i&gt;&gt;1</span><br><span class="line">    output^=lastbit              #将输出值写入 output的后面</span><br><span class="line">    return (output,lastbit)</span><br><span class="line"></span><br><span class="line">R=int(flag[5:-1],2)  #flag为二进制数据</span><br><span class="line">mask    =   0b1010011000100011100</span><br><span class="line"></span><br><span class="line">f=open(&quot;key&quot;,&quot;ab&quot;)   #以二进制追加模式打开</span><br><span class="line">for i in range(12):</span><br><span class="line">    tmp=0</span><br><span class="line">    for j in range(8):</span><br><span class="line">        (R,out)=lfsr(R,mask)</span><br><span class="line">        tmp=(tmp &lt;&lt; 1)^out</span><br><span class="line">    f.write(chr(tmp))   #将lfsr输出的序列每8个二进制为一组，转化为字符，共12组</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<p>思路:<br><img src="https://pic.imgdb.cn/item/676cee57d0e0a243d4ea7fbf.png"><br>第一种方法:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">from Crypto.Util.number import*</span><br><span class="line"></span><br><span class="line">f = open(&#x27;key.txt&#x27;,&#x27;rb&#x27;).read()</span><br><span class="line">r = bytes_to_long(f)</span><br><span class="line">bin_out = bin(r)[2:].zfill(12*8)</span><br><span class="line">R = bin_out[:19]    #获取输出序列中与掩码msk长度相同的值</span><br><span class="line">print(R)</span><br><span class="line">mask = &#x27;1010011000100011100&#x27;  #顺序 c_n,c_n-1,。。。,c_1</span><br><span class="line">key =  &#x27;0101010100111000111&#x27;</span><br><span class="line"></span><br><span class="line">R = &#x27;&#x27;</span><br><span class="line">for i in range(19):</span><br><span class="line">    output = &#x27;x&#x27;+key[:18]</span><br><span class="line">    out = int(key[-1])^int(output[-3])^int(output[-4])^int(output[-5])^int(output[-9])^int(output[-13])^int(output[-14])^int(output[-17])</span><br><span class="line">    R += str(out)</span><br><span class="line">    key = str(out)+key[:18]</span><br><span class="line"></span><br><span class="line">print(&#x27;flag&#123;&#x27;+R[::-1]+&#x27;&#125;&#x27;)</span><br></pre></td></tr></table></figure>
+<p>第二种方法：猜seed</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">from Crypto.Util.number import*</span><br><span class="line">import os,sys</span><br><span class="line">os.chdir(sys.path[0])</span><br><span class="line"></span><br><span class="line">f = open(&#x27;key.txt&#x27;,&#x27;rb&#x27;).read()</span><br><span class="line">c = bytes_to_long(f)</span><br><span class="line">bin_out = bin(c)[2:].zfill(12*8)   #将key文本内容转换为 2 进制数，每个字节占 8 位</span><br><span class="line"></span><br><span class="line">R = bin_out[0:19]  #取输出序列的前19位</span><br><span class="line">mask = 0b1010011000100011100</span><br><span class="line"></span><br><span class="line">def lfsr(R,mask):</span><br><span class="line">    output = (R &lt;&lt; 1) &amp; 0xffffffff</span><br><span class="line">    i=(R&amp;mask)&amp;0xffffffff</span><br><span class="line">    lastbit=0</span><br><span class="line">    while i!=0:</span><br><span class="line">        lastbit^=(i&amp;1)</span><br><span class="line">        i=i&gt;&gt;1</span><br><span class="line">    output^=lastbit</span><br><span class="line">    return (output,lastbit)</span><br><span class="line"></span><br><span class="line">#根据生成规则，初始状态最后一位拼接输出序列</span><br><span class="line">#我们可以猜测seed的第19位（0或1），如果seed19+R[:18]输出值等于R[:19]，那么就可以确定seed值了</span><br><span class="line">def decry():</span><br><span class="line">    cur = bin_out[0:19]      #前19位 2 进制数</span><br><span class="line">    res = &#x27;&#x27;</span><br><span class="line">    for i in range(19):</span><br><span class="line">        if lfsr(int(&#x27;0&#x27;+cur[0:18],2),mask)[0] == int(cur,2):</span><br><span class="line">            res += &#x27;0&#x27;</span><br><span class="line">            cur = &#x27;0&#x27;+cur[0:18]</span><br><span class="line">        else:</span><br><span class="line">            res += &#x27;1&#x27;</span><br><span class="line">            cur = &#x27;1&#x27; + cur[0:18]</span><br><span class="line">    return int(res[::-1],2)</span><br><span class="line"></span><br><span class="line">r = decry()</span><br><span class="line">print(bin(r))</span><br></pre></td></tr></table></figure>
+<p>第三种方法:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import os,sys</span><br><span class="line">os.chdir(sys.path[0])</span><br><span class="line">from Crypto.Util.number import *</span><br><span class="line">key = &#x27;0101010100111000111&#x27;</span><br><span class="line">mask = 0b1010011000100011100</span><br><span class="line"></span><br><span class="line">R = &quot;&quot;</span><br><span class="line">index = 0</span><br><span class="line">key = key[18] + key[:19]</span><br><span class="line">while index &lt; 19:</span><br><span class="line">    tmp = 0</span><br><span class="line">    for i in range(19):</span><br><span class="line">        if mask &gt;&gt; i &amp; 1:</span><br><span class="line">            tmp ^= int(key[18 - i])</span><br><span class="line">    R += str(tmp)</span><br><span class="line">    index += 1</span><br><span class="line">    key = key[18] + str(tmp) + key[1:18]</span><br><span class="line"></span><br><span class="line">print (R[::-1])</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/01/05/LFSR/" data-id="cm5jheffj0000zgux2sfy22rz" data-title="LFSR" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/01/04/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2025-01-04T06:43:28.749Z" itemprop="datePublished">2025-01-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/01/04/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/01/04/hello-world/" data-id="cm5jheffp0001zguxgd8l28ut" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/01/05/LFSR/">LFSR</a>
+          </li>
+        
+          <li>
+            <a href="/2025/01/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
